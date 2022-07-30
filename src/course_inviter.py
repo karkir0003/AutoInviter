@@ -3,3 +3,23 @@
 # can't be invited. Parse that error message and autosend email notification from dsgtbootcamp@gmail.com with a message saying to 
 # provide proper udemy account credentials
 
+from helium import *
+from constants import *
+from chromedriver_autodownloader import download_chromedriver
+
+def login_to_udemy():
+    """
+    Function to login to udemy
+    """
+    download_chromedriver('helium')
+    start_chrome(UDEMY_URL)
+    # click("Log in")
+    write(DSGT_EMAIL, into="Email")
+    write(DSGT_PASSWORD, into="Password")
+    click("Log in")
+    print("finished?")
+
+login_to_udemy()
+
+
+
